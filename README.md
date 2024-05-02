@@ -40,4 +40,4 @@ Abraço à Todos!!! :green_heart: :green_heart: :green_heart:
 
 ### Obrigado a equipe da FiqOn ### 
 
-Desenvolvido por `Kewen` com  :heart:	
+Desenvolvido por `Kewen`	
