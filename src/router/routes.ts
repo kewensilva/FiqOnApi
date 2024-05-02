@@ -9,10 +9,8 @@ routes.get('/api/fiqon', async (req, res) => {
   try {
     const apiToken = await authenticate();
     const pillars = await Pillars(apiToken);
-   const concatenatedPillars = pillars.concat().toString();
-    console.log(concatenatedPillars);
+    const concatenatedPillars = pillars.concat().toString();
     const base64Pillars = Buffer.from(concatenatedPillars).toString('base64');
-    console.log(base64Pillars);
     const response = await sendAnswer(apiToken, base64Pillars);
     res.send(response);
   } catch (error) {
