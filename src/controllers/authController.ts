@@ -10,8 +10,6 @@ export async function authenticate() {
     }
     const createToken = await axios.post(urlEndPoint,null, {headers: authToken});
     const token = createToken.data.api_token
-    console.log(token);
-    
     return token;    
     
 }

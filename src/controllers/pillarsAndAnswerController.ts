@@ -10,7 +10,11 @@ export async function Pillars(token: string, ): Promise<string[]> {
       const response = await axios.get(urlEndPoint, {
         params: { page, api_token: token }
       });
+      console.log(response);
+      
       getPillar.push(response.data.data);
+      console.log(getPillar);
+      
       if (response.data.more_items === 'true') {
         await AllPages(parseInt(response.data.next_page));
       }
@@ -20,11 +24,6 @@ export async function Pillars(token: string, ): Promise<string[]> {
   }
   await AllPages();
   return getPillar
-}
-export async function concatenateAndEncodePillars(pillars: string[]): Promise<string> {
-  const concatenatedPillars = pillars.join(' ');
-  const base64Pillars = Buffer.from(concatenatedPillars).toString('base64');
-  return base64Pillars;
 }
 export async function sendAnswer(apiToken: string, answer: string): Promise<string> {
   try {

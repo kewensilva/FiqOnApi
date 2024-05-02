@@ -1,17 +1,24 @@
 import express from "express";
 import { authenticate } from "../controllers/authController";
-import { Pillars, concatenateAndEncodePillars, sendAnswer } from "../controllers/pillarsAndAnswerController";
+import { Pillars, sendAnswer} from "../controllers/pillarsAndAnswerController";
+import { log } from "console";
+
 const routes = express.Router();
-routes.get('/api/Fiqon', async (req, res) => {
+
+routes.get('/api/fiqon', async (req, res) => {
   try {
     const apiToken = await authenticate();
     const pillars = await Pillars(apiToken);
-    const encodedPillars = await concatenateAndEncodePillars(pillars);
-    const response = await sendAnswer(apiToken, encodedPillars);
+   const concatenatedPillars = pillars.concat().toString();
+    console.log(concatenatedPillars);
+    const base64Pillars = Buffer.from(concatenatedPillars).toString('base64');
+    console.log(base64Pillars);
+    const response = await sendAnswer(apiToken, base64Pillars);
     res.send(response);
   } catch (error) {
     console.error("Erro na requisição:", Error);
     res.status(500).send("Erro na requisição");
   }
 });
+
 export default routes;
