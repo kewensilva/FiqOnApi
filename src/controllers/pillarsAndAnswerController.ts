@@ -3,7 +3,7 @@ import axios from "axios";
 import "dotenv/config";
 const urlEndPoint = `${process.env.URL_ENDPOINT_LIST}`;
 const urlEndPointAnswer = `${process.env.URL_ENDPOINT_REQUEST}`;
-export async function Pillars(token: string): Promise<string[]> {
+export async function Pillars(token: string, ): Promise<string[]> {
   const getPillar: string[] = [];
   async function AllPages(page: number = 0): Promise<void> {
     try {
@@ -20,6 +20,11 @@ export async function Pillars(token: string): Promise<string[]> {
   }
   await AllPages();
   return getPillar
+}
+export async function concatenateAndEncodePillars(pillars: string[]): Promise<string> {
+  const concatenatedPillars = pillars.join(' ');
+  const base64Pillars = Buffer.from(concatenatedPillars).toString('base64');
+  return base64Pillars;
 }
 export async function sendAnswer(apiToken: string, answer: string): Promise<string> {
   try {
