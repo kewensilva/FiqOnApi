@@ -17,6 +17,7 @@ Etapa 1 - Autenticação :heavy_check_mark:
 - Recuperando o valor da chave api_token;
 
 Etapa 2 - Consumo de informações :heavy_check_mark:
+#### pillarsAndAnswerController ####
 - Com informação do token gerado na Etapa 1, enviado a informação para fazer o GET da chave page;
 - Efetuado a verificação das páginas para armazenar os valores de quantidade de página existentes;
 - Fazendo a verificação com a chave more_items, em que está presente na api, e quando a informação retornar false, entende-se que não existe mais página na sequência;
@@ -24,6 +25,7 @@ Etapa 2 - Consumo de informações :heavy_check_mark:
 - Posteriormente retornando os pilares da cultura;
 
 Etapa 3 - Envio de informações :heavy_check_mark:
+#### pillarsAndAnswerController ####
 - Pilares da cultura armazenados em um Array;
 - Efetuada a criação de uma constante para fazer a conversão de Array para String;
 - Em uma variável, foi guardado todos os pilares da cultura, assim convertendo a mesma para (base64);
@@ -37,3 +39,5 @@ Agradeço pela oportunidade, estou a disposição.
 Abraço à Todos!!! :green_heart: :green_heart: :green_heart:
 
 ### Obrigado a equipe da FiqOn ### 
+
+                                        Desenvolvido por `Kewen` com :heart:
