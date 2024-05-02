@@ -10,11 +10,7 @@ export async function Pillars(token: string, ): Promise<string[]> {
       const response = await axios.get(urlEndPoint, {
         params: { page, api_token: token }
       });
-      console.log(response);
-      
       getPillar.push(response.data.data);
-      console.log(getPillar);
-      
       if (response.data.more_items === 'true') {
         await AllPages(parseInt(response.data.next_page));
       }
