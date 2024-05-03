@@ -31,6 +31,11 @@ Etapa 3 - Envio de informações :heavy_check_mark:
 - Em uma variável, foi guardado todos os pilares da cultura, assim convertendo a mesma para (base64);
 - Posteriormente enviando o token como parametro e a awnser, que seria os pilares da cultura convertido para (base64);
 
+# Para Executar Projeto #
+_Usando npm, primeiro passo:
+_executar `npm install` para ser instalado todas as dependências do projeto.
+_Para rodar o projeto executar o seguinte comando: `npm start`
+_ùnica rota com metódo GET - `http://localhost:3000/api/fiqon` 
 
 # Agradecimentos #
 
